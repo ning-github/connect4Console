@@ -31,18 +31,12 @@ var playConnectFour=function(){
 	/////   PLAY FUNCTION    //////
 	var play=function(color){
 		console.log("moves left: " +totalMovesLeft);
-		var move=prompt("what column are you dropping your " + color + " checker in?");
+		var move=prompt("what column are you dropping your " + color + " checker in?").toUpperCase();
 
 		//to exit game right away
 		if (move=="Q"){
-			alert("Play aborted!");
+			alert("Current game quit!");
 			totalMovesLeft=0;
-			return 0;	//won't clutter stack with invalid input
-		}
-		//to reset game
-		if (move=="R"){
-			alert("Game reset!");
-			playConnectFour();
 			return 0;	//won't clutter stack with invalid input
 		}
 
@@ -258,7 +252,7 @@ var playConnectFour=function(){
 	//replay function
 	var checkReplay=function(){
 		if (totalMovesLeft==0){
-			var playAgain=prompt("Play again? Y/N");
+			var playAgain=prompt("Play again? Y/N").toUpperCase();
 			if (playAgain=="Y"){
 				playConnectFour();
 			}
