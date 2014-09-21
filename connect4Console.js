@@ -31,10 +31,10 @@ var playConnectFour=function(){
 	/////   PLAY FUNCTION    //////
 	var play=function(color){
 		console.log("moves left: " +totalMovesLeft);
-		var move=prompt("what column are you dropping your " + color + " checker in?").toUpperCase();
+		var move=prompt("what column are you dropping your " + color + " checker in?");
 
 		//to exit game right away
-		if (move=="Q"){
+		if ((move=="Q")||(move=="q")){
 			alert("Current game quit!");
 			totalMovesLeft=0;
 			return 0;	//won't clutter stack with invalid input
@@ -252,11 +252,11 @@ var playConnectFour=function(){
 	//replay function
 	var checkReplay=function(){
 		if (totalMovesLeft==0){
-			var playAgain=prompt("Play again? Y/N").toUpperCase();
-			if (playAgain=="Y"){
+			var playAgain=prompt("Play again? Y/N");
+			if ((playAgain=="Y")||(playAgain=="y"))	{
 				playConnectFour();
 			}
-			else if (playAgain=="N")	{
+			else if ((playAgain=="N")||(playAgain=="n"))  {
 				alert("Goodbye!");
 			}
 			else{
